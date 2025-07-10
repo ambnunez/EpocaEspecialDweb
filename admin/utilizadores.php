@@ -22,7 +22,6 @@ require('../includes/connection.php');
     <h2 class="mb-0">Gestão de Utilizadores</h2>
     <div>
       <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Adicionar Equipa</button>
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdicionarAdmin">Adicionar Admin</button>
     </div>
   </div>
 
@@ -103,37 +102,6 @@ require('../includes/connection.php');
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-success">Adicionar</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-<!-- Modal Adicionar Admin -->
-<div class="modal fade" id="modalAdicionarAdmin" tabindex="-1">
-  <div class="modal-dialog">
-    <form class="modal-content" action="adicionar_utilizador.php" method="POST">
-      <div class="modal-header">
-        <h5 class="modal-title">Adicionar Admin</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label class="form-label">Nome</label>
-          <input type="text" class="form-control" name="nome" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" name="email" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" required>
-        </div>
-        <input type="hidden" name="tipo_utilizador" value="admin">
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Adicionar</button>
       </div>
     </form>
   </div>

@@ -31,7 +31,6 @@ require('../includes/connection.php');
     </button>
   </div>
 
-  <!-- Tabela de Projetos -->
   <table class="table table-hover table-bordered align-middle">
     <thead class="table-dark">
       <tr>
@@ -47,21 +46,24 @@ require('../includes/connection.php');
       $resultado = $conn->query($sql);
 
       if ($resultado->num_rows > 0) {
-          while ($row = $resultado->fetch_assoc()) {
-              echo "<tr>";
-              echo "<td><img src='../uploads/" . htmlspecialchars($row['imagem']) . "' class='img-thumb' alt='Projeto'></td>";
-              echo "<td>" . htmlspecialchars($row['titulo']) . "</td>";
-              echo "<td>" . htmlspecialchars($row['descricao']) . "</td>";
-              echo "<td>
-                      <form action='remover_projeto.php' method='POST' onsubmit='return confirm(\"Tens a certeza que queres remover este projeto?\");'>
-                        <input type='hidden' name='id' value='" . $row['id'] . "'>
-                        <button type='submit' class='btn btn-sm btn-danger'>Remover</button>
-                      </form>
-                    </td>";
-              echo "</tr>";
-          }
+        while ($row = $resultado->fetch_assoc()) {
+          echo "<tr>";
+          echo "<td><img src='../uploads/" . htmlspecialchars($row['imagem']) . "' class='img-thumb' alt='Projeto'></td>";
+          echo "<td>" . htmlspecialchars($row['titulo']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['descricao']) . "</td>";
+          echo "<td>
+            <form action='toggle_visibilidade.php' method='POST' class='d-inline'>
+              <input type='hidden' name='id' value='" . $row['id'] . "'>
+              <button type='submit' class='btn btn-sm " . ($row['visivel'] ? 'btn-warning' : 'btn-primary') . "'>
+                <i class='bi " . ($row['visivel'] ? 'bi-eye-slash' : 'bi-eye') . " me-1'></i>
+                " . ($row['visivel'] ? 'Ocultar' : 'Mostrar') . "
+              </button>
+            </form>
+          </td>";
+          echo "</tr>";
+        }
       } else {
-          echo "<tr><td colspan='4' class='text-center'>Nenhum projeto encontrado.</td></tr>";
+        echo "<tr><td colspan='4' class='text-center'>Nenhum projeto encontrado.</td></tr>";
       }
       ?>
     </tbody>

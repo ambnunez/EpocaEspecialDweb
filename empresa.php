@@ -48,7 +48,7 @@ require('./includes/connection.php');
 
   <div class="row text-center">
     <?php
-    $sql = "SELECT * FROM utilizadores WHERE tipo_utilizador = 'equipa'";
+    $sql = "SELECT * FROM utilizadores WHERE tipo_utilizador = 'equipa' AND visivel = 1";
     $resultado = $conn->query($sql);
 
     if ($resultado->num_rows > 0) {

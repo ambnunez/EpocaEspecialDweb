@@ -24,7 +24,7 @@ require('./includes/connection.php');
   <!-- Galeria de Projetos -->
   <div class="row g-4">
     <?php
-    $sql = "SELECT * FROM projetos";
+    $sql = "SELECT * FROM projetos WHERE visivel = 1";
     $resultado = $conn->query($sql);
 
     if ($resultado->num_rows > 0) {

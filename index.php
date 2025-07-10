@@ -2,28 +2,14 @@
 session_start();
 ?>
 
-<!-- filepath: c:\laragon\www\epocaespecialdwebv1\index.php -->
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSolutions</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Opcional -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
-    <!-- Scroll suave -->
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-        .text-green-custom {
-                color:rgb(68, 146, 120);
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSolutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -41,57 +27,57 @@ session_start();
 
 <!-- Secção Desenvolvimento -->
 <div id="desenvolvimento" class="container my-5">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Desenvolvimento de Websites">
-        </div>
-        <div class="col-md-6">
-            <h3>Desenvolvimento de Websites</h3>
-            <p>Criamos websites personalizados, rápidos e responsivos, com foco na experiência do utilizador e na performance. Utilizamos boas práticas de SEO e design moderno para garantir uma presença digital forte, adaptada a qualquer dispositivo e fácil de gerir.</p>
-        </div>
+  <div class="row align-items-center">
+    <div class="col-md-6 order-1 order-md-0">
+      <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Desenvolvimento de Websites">
     </div>
+    <div class="col-md-6 order-0 order-md-1">
+      <h3>Desenvolvimento de Websites</h3>
+      <p>Criamos websites personalizados, rápidos e responsivos, com foco na experiência do utilizador e na performance. Utilizamos boas práticas de SEO e design moderno para garantir uma presença digital forte, adaptada a qualquer dispositivo e fácil de gerir.</p>
+    </div>
+  </div>
 </div>
 
 <!-- Secção Manutenção -->
 <div id="manutencao" class="container my-5">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h3>Manutenção Técnica</h3>
-            <p>Garantimos que o seu site funciona corretamente, sem falhas nem riscos de segurança. Prestamos serviços de atualização, correção de erros, backups e suporte técnico, assegurando a estabilidade contínua da sua presença online.</p>
-        </div>
-        <div class="col-md-6">
-            <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Manutenção Técnica">
-        </div>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h3>Manutenção Técnica</h3>
+      <p>Garantimos que o seu site funciona corretamente, sem falhas nem riscos de segurança. Prestamos serviços de atualização, correção de erros, backups e suporte técnico, assegurando a estabilidade contínua da sua presença online.</p>
     </div>
+    <div class="col-md-6">
+      <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Manutenção Técnica">
+    </div>
+  </div>
 </div>
 
 <!-- Secção E-Commerce -->
 <div id="ecommerce" class="container my-5">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="E-Commerce">
-        </div>
-        <div class="col-md-6">
-            <h3>E-Commerce</h3>
-            <p>Desenvolvemos lojas virtuais completas, com sistema de gestão de produtos, pagamentos integrados e design atrativo. Ajudamos o seu negócio a vender online de forma segura, intuitiva e eficaz, com foco na conversão de visitantes em clientes.</p>
-        </div>
+  <div class="row align-items-center">
+    <div class="col-md-6 order-1 order-md-0">
+      <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="E-Commerce">
     </div>
+    <div class="col-md-6 order-0 order-md-1">
+      <h3>E-Commerce</h3>
+      <p>Desenvolvemos lojas virtuais completas, com sistema de gestão de produtos, pagamentos integrados e design atrativo. Ajudamos o seu negócio a vender online de forma segura, intuitiva e eficaz, com foco na conversão de visitantes em clientes.</p>
+    </div>
+  </div>
 </div>
 
 <!-- Secção Marketing Digital -->
 <div id="marketing" class="container my-5">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h3>Marketing Digital</h3>
-            <p>Aumente a visibilidade da sua marca com estratégias digitais personalizadas: gestão de redes sociais, campanhas de Google Ads, email marketing e criação de conteúdo. Trabalhamos com foco em resultados e crescimento sustentável do seu negócio.</p>
-        </div>
-        <div class="col-md-6">
-            <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Marketing Digital">
-        </div>
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h3>Marketing Digital</h3>
+      <p>Aumente a visibilidade da sua marca com estratégias digitais personalizadas: gestão de redes sociais, campanhas de Google Ads, email marketing e criação de conteúdo. Trabalhamos com foco em resultados e crescimento sustentável do seu negócio.</p>
     </div>
+    <div class="col-md-6">
+      <img src="imagens/imagem1.jpg" class="img-thumbnail" alt="Marketing Digital">
+    </div>
+  </div>
 </div>
 
-<!-- Seção "Nós Garantimos" -->
+<!-- Secção "Nós Garantimos" -->
 <div id="nos-garantimos" class="py-5" style="background-color: rgb(92, 153, 125);">
   <div class="container text-center text-white">
     <h2 class="mb-4 fw-bold">Nós Garantimos</h2>
@@ -140,8 +126,6 @@ session_start();
     </div>
   </div>
 </div>
-
-
 
 <!-- Footer e rodapé -->
 <?php require('includes/footer_infos.php'); ?>
