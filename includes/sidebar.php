@@ -40,6 +40,5 @@
   <a href="utilizadores.php"><i class="bi bi-people me-2"></i>Utilizadores</a>
   <a href="projetos.php"><i class="bi bi-folder2-open me-2"></i>Projetos</a>
   <a href="pedidosorcamentos.php"><i class="bi bi-file-earmark-text me-2"></i>Orçamentos</a>
-  <a href="definicoes.php"><i class="bi bi-gear me-2"></i>Definições</a>
   <a href="index.php" class="mt-4"><i class="bi bi-box-arrow-right me-2"></i>Sair</a>
 </div>

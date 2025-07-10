@@ -15,13 +15,23 @@ require('./includes/connection.php');
 
 <?php require('includes/navbar.php'); ?>
 
-<!-- Formulário Pedido de Orçamento -->
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-lg-8">
+
+      <?php if (isset($_SESSION['sucesso'])): ?>
+        <div class="alert alert-success">
+          <?= $_SESSION['sucesso']; unset($_SESSION['sucesso']); ?>
+        </div>
+      <?php elseif (isset($_SESSION['erro'])): ?>
+        <div class="alert alert-danger">
+          <?= $_SESSION['erro']; unset($_SESSION['erro']); ?>
+        </div>
+      <?php endif; ?>
+
       <div class="card shadow border-0">
         <div class="card-body p-4">
-          <h2 class="text-center mb-4 text-primary">Pedir Orçamento</h2>
+          <h2 class="text-center mb-4 text-success">Pedir Orçamento</h2>
 
           <form action="pedirorcamento.php" method="POST">
 
@@ -47,22 +57,14 @@ require('./includes/connection.php');
             <div class="mb-3">
               <label class="form-label">Serviços desejados</label>
               <div class="row row-cols-1 row-cols-sm-2 g-2">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Desenvolvimento Web" name="servicos[]" id="web">
-                  <label class="form-check-label" for="web">Desenvolvimento Web</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Ecommerce" name="servicos[]" id="ecommerce">
-                  <label class="form-check-label" for="ecommerce">E-Commerce</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Manutenção" name="servicos[]" id="manutencao">
-                  <label class="form-check-label" for="manutencao">Manutenção</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="Marketing Digital" name="servicos[]" id="marketing">
-                  <label class="form-check-label" for="marketing">Marketing Digital</label>
-                </div>
+                <?php
+                $servicos = ['Desenvolvimento Web', 'Ecommerce', 'Manutenção', 'Marketing Digital'];
+                foreach ($servicos as $servico): ?>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="<?= $servico ?>" name="servicos[]" id="<?= strtolower(str_replace(' ', '', $servico)) ?>">
+                    <label class="form-check-label" for="<?= strtolower(str_replace(' ', '', $servico)) ?>"><?= $servico ?></label>
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
 
@@ -72,7 +74,7 @@ require('./includes/connection.php');
             </div>
 
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg">Enviar Pedido</button>
+              <button type="submit" class="btn btn-success btn-lg">Enviar Pedido</button>
             </div>
 
           </form>
@@ -83,11 +85,9 @@ require('./includes/connection.php');
   </div>
 </div>
 
-<!-- Footer e rodapé -->
 <?php require('includes/footer_infos.php'); ?>
 <?php require('includes/rodape.php'); ?>
 
-<!-- Scripts -->
 <script type="text/javascript" src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
